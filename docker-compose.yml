@@ -8,6 +8,8 @@ services:
     environment:
       - MYSQL_DATABASE=nodejs_mysql
       - MYSQL_ROOT_PASSWORD=P@SSwor4
+      - MYSQL_USER=mauroslucios
+      - MYSQL_PASSWORD=P@SSwor4
     volumes:
       - "nodejs-mysql:/var/lib/mysql"
       - "./nodejs-mysql/init.sql:/docker-entrypoint-initdb.d/init.sql"
