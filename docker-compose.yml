@@ -1,0 +1,40 @@
+version: "3.8"
+services:
+  app:
+    image: mauroslucios/impulsotec:1.0
+    ports:
+      - 3000:3000
+    volumes:
+      - ./:/var/www/app
+    environment:
+      NODE_ENV: development
+    depends_on:
+      - mysql-node
+  mysql-node:
+    image: mysql:8.0
+    container_name: nodejs-mysql
+    ports:
+      - '3306:3306'
+    environment:
+      - MYSQL_DATABASE=nodejs_mysql
+      - MYSQL_ROOT_PASSWORD=P@SSwor4
+      - MYSQL_USER=mauroslucios
+      - MYSQL_PASSWORD=P@SSwor4
+    volumes:
+      - "nodejs-mysql:/var/lib/mysql"
+      - "./nodejs-mysql/init.sql:/docker-entrypoint-initdb.d/init.sql"
+    networks:
+      node_network:
+        ipv4_address: 172.20.1.2
+
+volumes:
+  nodejs-mysql:
+    driver: local
+
+networks:
+  node_network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.1.0/16
+          gateway: 172.20.1.1
