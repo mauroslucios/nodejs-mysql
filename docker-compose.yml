@@ -1,5 +1,15 @@
 version: "3.8"
 services:
+  app:
+    image: mauroslucios/impulsotec:1.0
+    ports:
+      - 3000:3000
+    volumes:
+      - ./:/var/www/app
+    environment:
+      NODE_ENV: development
+    depends_on:
+      - mysql-node
   mysql-node:
     image: mysql:8.0
     container_name: nodejs-mysql
