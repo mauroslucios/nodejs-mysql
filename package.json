@@ -1,0 +1,25 @@
+{
+  "name": "nodejs-mysql",
+  "version": "1.0.0",
+  "description": "tutorial mysql com nodejs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mauroslucios/nodejs-mysql.git"
+  },
+  "keywords": [
+    "mysql",
+    "nodejs",
+    "docker",
+    "mauroslucios"
+  ],
+  "author": "mauroslucios@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mauroslucios/nodejs-mysql/issues"
+  },
+  "homepage": "https://github.com/mauroslucios/nodejs-mysql#readme"
+}
